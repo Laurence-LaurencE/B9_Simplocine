@@ -1,3 +1,9 @@
+### API TMBD: 
+https://developer.themoviedb.org/reference/intro/authentication
+
+
+
+### ========================================
 ### Dans Fetch.tsx :
 
 ### ma const responseFetch = await fetch("https://api.themoviedb.org/3/authentication"); est remplacée par :

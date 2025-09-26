@@ -7,7 +7,7 @@ import { Button } from "../button/Button";
 export const Header = () => {
   return (
     <div className="header">
-      <img src="" alt="logo" />
+      <img src="./pict/Logo_SimploCine.jpg" alt="logo" />
       <h1>Simplo Ciné</h1>
       <nav>
         <ul>
