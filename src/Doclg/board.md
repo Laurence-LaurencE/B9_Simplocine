@@ -2,7 +2,7 @@
 
 ### ma const responseFetch = await fetch("https://api.themoviedb.org/3/authentication"); est remplacée par :
 ## const responseFetch = await fetch(url, options); qui contient les 2 constantes : url et options.
-=> fetch a maintenant 2 parametrse : 
+=> fetch a maintenant 2 parametres : 
 - l'url 
 + l'option (=le token & l'autorisaiton de d'utiliser json).
 
@@ -43,3 +43,12 @@ export const App = () => {
 
     fetchGetDatasAPI();
   }, []);
+};
+
+
+## => console.log("connexion réussi", datas); 
+
+
+  ### ===============================================
+
+
