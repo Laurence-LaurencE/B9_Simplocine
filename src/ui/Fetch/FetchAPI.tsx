@@ -1,11 +1,11 @@
 
 import { useEffect, useState } from "react";
+import type { responsType } from "../type/type";
 
 
 export const Fetch = (urlAPI: string) => {
 
 
-    
 useEffect(() => {
     const fetchGetDatasAPI = async () => {
       try {
@@ -18,12 +18,12 @@ useEffect(() => {
 
         //Pour recup l'url des films : 2 solutions
         // soit un fetch par url de tye de films/sereis
-        // soit un fetch generiq qui renvoie vers un prametre (=une boite) pour chque url.
+        // soit un fetch generiq qui renvoie vers un parametre (=une boite) pour chque url.
 
-        //   ex: ci-dessous pou rl efecthc spécifique :
+        //   ex: ci-dessous pour le fetch spécifique :
         // const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1';
 
-        //fetch genriq :       
+        //fetch generiq :       
         const urlGeneric = urlAPI;
 
         const options = {
@@ -41,8 +41,8 @@ useEffect(() => {
 
         const datas = await responseFetch.json();
 
-        console.log("connexion réussi", datas);
-
+        // console.log("connexion réussi", datas);
+        return datas;
 
       } catch (error) {
         console.log(error);
@@ -54,7 +54,7 @@ useEffect(() => {
 
 
   return (
-    <> A MODIFIER : pas de html une fonction </> 
+    <> A MODIFIER : pas de html mais une fonction </> 
         // mes données = mes films
   );
 
