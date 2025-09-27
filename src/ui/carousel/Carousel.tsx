@@ -1,7 +1,7 @@
 import "./Carousel.css";
 import { useRef } from "react";
 import { Card } from "../card/Card";
-import type { ResultMovie } from "../core/type";
+import type { ResultMovie } from "../../core/type";
 
 interface CarouselProps {
   films: ResultMovie[];

@@ -1,5 +1,5 @@
 import "./Card.css";
-import type { ResultMovie } from "../core/type";
+import type { ResultMovie } from "../../core/type";
 
 interface CardProps {
   film: ResultMovie;
