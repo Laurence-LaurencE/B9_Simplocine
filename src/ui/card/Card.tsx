@@ -1,10 +1,18 @@
 import "./Card.css";
-import clsx from "clsx";
+import type { ResultMovie } from "../core/type";
 
-export const Card = () => {
+interface CardProps {
+  film: ResultMovie;
+}
+
+export const Card = ({ film }: CardProps) => {
   return (
-    <>
-      <img className="cardImg" src="../../public/pict/imgtest.png" alt="imgtest" />
-    </>
+    <div className="card">
+      <img
+        src={`https://image.tmdb.org/t/p/w300${film.poster_path}`}
+        alt={film.title}
+      />
+      <h4>{film.title}</h4>
+    </div>
   );
 };
