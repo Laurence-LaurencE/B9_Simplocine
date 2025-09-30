@@ -1,13 +1,21 @@
 import "./Carousel.css";
 import { useRef } from "react";
 import { Card } from "../card/Card";
-import type { ResultMovie } from "../../core/type";
+import type { ResultMovie, ResultSeries } from "../../core/type";
+import { ContenTypeEnum } from "../../core/type";
+import { CardSerie } from "../card-serie/CardSerie";
 
-interface CarouselProps {
-  films: ResultMovie[];
-}
+type CarouselProps =
+  | {
+      content: ResultMovie[];
+      contentType: ContenTypeEnum.MOVIE;
+    }
+  | {
+      content: ResultSeries[];
+      contentType: ContenTypeEnum.SERIE;
+    };
 
-export const Carousel = ({ films }: CarouselProps) => {
+export const Carousel = ({ content, contentType }: CarouselProps) => {
   const carouselRef = useRef<HTMLUListElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -27,11 +35,19 @@ export const Carousel = ({ films }: CarouselProps) => {
       </button>
 
       <ul className="carousel" ref={carouselRef}>
-        {films.map((film) => (
-          <li key={film.id}>
-            <Card film={film} />
-          </li>
-        ))}
+        {contentType === ContenTypeEnum.MOVIE &&
+          (content as ResultMovie[]).map((item) => (
+            <li key={item.id}>
+              <Card content={item} />
+            </li>
+          ))}
+
+        {contentType === ContenTypeEnum.SERIE &&
+          (content as ResultSeries[]).map((item) => (
+            <li key={item.id}>
+              <CardSerie content={item} />
+            </li>
+          ))}
       </ul>
 
       <button className="arrow right" onClick={() => scroll("right")}>

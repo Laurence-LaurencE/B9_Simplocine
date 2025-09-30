@@ -4,9 +4,13 @@ import { Link } from "react-router-dom";
 import "./Banner.css";
 
 export const Banner = () => {
-   const randomPage = Math.floor(Math.random() * 200) + 1;
+  
+  const randomPage = Math.floor(Math.random() * 200) + 1;
+
+
+
   const filmAleatoireBanner = useMovieConnection<RequestMovieList>(
-    `https://api.themoviedb.org/3/discover/movie?page=${randomPage}`
+    `https://api.themoviedb.org/3/movie/popular?page=${randomPage}`
   );
 
   return (
@@ -21,3 +25,4 @@ export const Banner = () => {
     </Link>
   );
 };
+

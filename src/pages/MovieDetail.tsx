@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
 import { useMovieDetail } from "../core/fetchDetail";
-import type { Moviedetail } from "../core/type";
+import { ContenTypeEnum, type Moviedetail } from "../core/type";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
-  const films = useMovieDetail<Moviedetail>(id);
+  const films = useMovieDetail<Moviedetail>(id, ContenTypeEnum.MOVIE);
 
   console.log(films);
 

@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
+import Logo_SimploCine from "/Logo_SimploCine.jpg"
 import "./Header.css";
 
 
 export const Header = () => {
   return (
     <div className="header">
-      <img src="/Logo_SimploCine.png" alt="logo" />
+      <img src={Logo_SimploCine} alt="logo" />
       <h1>Simplo Ciné</h1>
       <nav>
         <ul>

@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
+import { ContenTypeEnum } from "./type";
 
-export const useMovieDetail = <T extends unknown>(id: string | undefined): T | undefined => {
+export const useMovieDetail = <T extends unknown>(
+  id: string | undefined,
+  type: ContenTypeEnum
+): T | undefined => {
   const [films, setFilms] = useState<T>();
 
   useEffect(() => {
     const fetchMovie = async () => {
       try {
-        const url = `https://api.themoviedb.org/3/movie/${id}`;
+        let url = "";
+
+        if (type === ContenTypeEnum.MOVIE) {
+          url = `https://api.themoviedb.org/3/movie/${id}`;
+        } else if (type === ContenTypeEnum.SERIE) {
+          url = `https://api.themoviedb.org/3/tv/${id}`;
+        }
+
+        if (!url) return;
 
         const options = {
           method: "GET",

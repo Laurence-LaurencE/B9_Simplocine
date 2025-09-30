@@ -3,18 +3,18 @@ import type { ResultMovie } from "../../core/type";
 import { Link } from "react-router-dom";
 
 interface CardProps {
-  film: ResultMovie;
+  content: ResultMovie;
 }
 
-export const Card = ({ film }: CardProps) => {
+export const Card = ({ content }: CardProps) => {
   return (
-    <Link to={`/movie/${film.id}`}>
+    <Link to={`/movie/${content.id}`}>
       <div className="card">
         <img
-          src={`https://image.tmdb.org/t/p/w300${film.poster_path}`}
-          alt={film.title}
+          src={`https://image.tmdb.org/t/p/w300${content.poster_path}`}
+          alt={content.title}
         />
-        <h4>{film.title}</h4>
+        <h4>{content.title}</h4>
       </div>
     </Link>
   );
