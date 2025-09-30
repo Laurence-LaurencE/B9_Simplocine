@@ -2,6 +2,7 @@ import "./Banner.css";
 import clsx from "clsx";
 
 export const Banner = () => {
+  
   return (
     <div className="banner">
       <a href="{/* lien vers la BDD*/}">

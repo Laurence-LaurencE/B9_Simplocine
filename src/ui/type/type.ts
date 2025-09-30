@@ -25,3 +25,10 @@ export interface resultsMoviesType {
     vote_count: number;
 };
 
+export interface CarouselProps {
+    Films: resultsMoviesType[];
+};
+
+export interface CardProps {
+    film: resultsMoviesType;
+};

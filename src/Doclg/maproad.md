@@ -12,6 +12,9 @@
  > MoviesList.tsx
  > MoviesList.css
 
+ => header 
+ => 5 carousels
+
 ## seriesList
  > SeriesList.tsx
  > SeriesList.css
