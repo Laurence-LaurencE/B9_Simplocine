@@ -58,3 +58,46 @@ export const App = () => {
   ### ===============================================
 
 
+### typage => 
+1/ interfaces 
+2/ improter ds le fetch.tsx
+3/ importer ds App.tsx
+
+
+
+ds FetchAPI :
+export const Fetch = <T extends unknown> (urlAPI:string): T | undefined => {}
+=> on type la fonction avec T
+
+___________________
+
+=> 'FetcherPopular' is declared but its value is never read.ts(6133)
+= a besoin d'un typage 
+
+
+useState/useEffect
+
+//je range les données de l'API ds ma boite setFilm
+setFilms(datas); 
+=> se déverse ds la boite Films
+=> dc je return la boite Films.
+
+
+###
+{FetcherPopular && <Carousel Films={FetcherPopular?.results}/>}
+&& = alors
+
+
+### =============================================
+### Construction des views :
+
+### Home 
+=> il faut migrer toute la structure de la page Home (depuis APp.tsx) vers la views Home.
+  => renommer la const App => Home !
+=> App.tsx ne contiendra plus que les routes.
+
+
+### =======================================
+ROUTES :
+prévoir les routes pour chaque views ds App.tsx
+ - 

@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import type { responsType } from "../type/type";
 
 
-export const Fetch = (urlAPI: string) => {
+export const useFetch = <T extends unknown> (urlAPI:string): T | undefined => {
+
+  const [Films, setFilms] = useState<T>();
 
 
 useEffect(() => {
@@ -42,7 +44,8 @@ useEffect(() => {
         const datas = await responseFetch.json();
 
         // console.log("connexion réussi", datas);
-        return datas;
+        // return datas;
+        setFilms(datas); //je range les données de l'API ds ma boite setFilm
 
       } catch (error) {
         console.log(error);
@@ -53,10 +56,7 @@ useEffect(() => {
   }, []);
 
 
-  return (
-    <> A MODIFIER : pas de html mais une fonction </> 
-        // mes données = mes films
-  );
+  return Films;
 
 };
 
