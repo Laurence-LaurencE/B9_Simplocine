@@ -21,7 +21,7 @@ export const Home = () => {
   // console.log(FetcherPopular?.results[1].title);
   // console.log("TopRated");
   // console.log("UpComing");
-  console.log(FetcherPopular?.results[].genre_ids);
+  // console.log(FetcherPopular?.results[].genre_ids);
   
 
   return (
