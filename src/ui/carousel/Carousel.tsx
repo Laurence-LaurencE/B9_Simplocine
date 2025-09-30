@@ -23,7 +23,7 @@ export const Carousel = ({Films}: CarouselProps) => {
             {/* parcourir le tableau results pour lire chacunes des propriétés de cahque enregistrment(ligne) */}
             {
                 Films.map((film) => (
-                    <li>
+                    <li key={film.id}>
                         <Card film={film}/>
                     </li>
                 )
