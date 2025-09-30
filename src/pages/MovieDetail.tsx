@@ -1,27 +1,26 @@
-import { useParams } from "react-router-dom";
-import { useMovieDetail } from "../core/fetchDetail";
 import { ContenTypeEnum, type Moviedetail } from "../core/type";
+import { useMovieDetail } from "../core/fetchDetail";
+import { useParams } from "react-router-dom";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
-  const films = useMovieDetail<Moviedetail>(id, ContenTypeEnum.MOVIE);
+  const film = useMovieDetail<Moviedetail>(id, ContenTypeEnum.MOVIE);
 
-  console.log(films);
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h2>{films?.title}</h2>
+      <h2>{film?.title}</h2>
       <img
-        src={`https://image.tmdb.org/t/p/w300${films?.poster_path}`}
-        alt={films?.title}
+        src={`https://image.tmdb.org/t/p/w300${film?.poster_path}`}
+        alt={film?.title}
       />
       <p>
-        Date de sortie : {films?.release_date}
+        Date de sortie : {film?.release_date}
       </p>
       <p>
-        Note moyenne : {films?.vote_average}
+        Note moyenne : {film?.vote_average}
       </p>
-      <p>{films?.overview}</p>
+      <p>{film?.overview}</p>
     </div>
   );
 }
