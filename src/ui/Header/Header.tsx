@@ -1,25 +1,21 @@
-import "./Header.css";
-import clsx from "clsx";
+import { Link } from "react-router-dom";
 import { Button } from "../button/Button";
+import "./Header.css";
 
-//interface ? 
 
 export const Header = () => {
   return (
     <div className="header">
-      <img src="" alt="logo" />
+      <img src="/Logo_SimploCine.png" alt="logo" />
       <h1>Simplo Ciné</h1>
       <nav>
         <ul>
-          {/* <li>
-            <button>Liste des films</button>
-          </li>
-          <li>
-            <button>Liste des séries</button>
-          </li> */}
-
+          <Link to="/listfilms">
           <li><Button label="Liste des films"/></li>
+          </Link>
+          <Link to="/listSeries">
           <li><Button label="Liste des séries"/></li>
+          </Link>
         </ul>
       </nav>
     </div>
