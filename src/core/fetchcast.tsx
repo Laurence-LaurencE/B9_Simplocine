@@ -1,24 +1,14 @@
 import { useEffect, useState } from "react";
-import { ContenTypeEnum } from "./type";
+import type { CastMemberMovie, resultCastMenberMovie } from "./type";
 
-export const useMovieDetail = <T extends unknown>(
-  id: string | undefined,
-  type: ContenTypeEnum
-): T | undefined => {
-  const [films, setFilms] = useState<T>();
+
+export const useMovieCast = (id: string) => {
+  const [cast, setCast] = useState<CastMemberMovie[]>([]);
 
   useEffect(() => {
-    const fetchMovie = async () => {
+    const fetchCastMovie = async () => {
       try {
-        let url = "";
-
-        if (type === ContenTypeEnum.MOVIE) {
-          url = `https://api.themoviedb.org/3/movie/${id}`;
-        } else if (type === ContenTypeEnum.SERIE) {
-          url = `https://api.themoviedb.org/3/tv/${id}`;
-        }
-
-        if (!url) return;
+        const url = `https://api.themoviedb.org/3/movie/${id}/credits`;
 
         const options = {
           method: "GET",
@@ -29,16 +19,17 @@ export const useMovieDetail = <T extends unknown>(
           },
         };
         const result = await fetch(url, options);
-        const data = await result.json();
-
-        setFilms(data);
+        const data: resultCastMenberMovie = await result.json();
+        console.log(data);
+        
+        setCast(data.cast || []);
       } catch (err) {
         console.error(err);
       }
     };
 
-    fetchMovie();
+    fetchCastMovie();
   }, [id]);
 
-  return films;
+  return cast;
 };

@@ -1,6 +1,7 @@
 export enum ContenTypeEnum {
   MOVIE = "MOVIE",
   SERIE = "SERIE",
+  CAST = "CAST",
 }
 
 export interface RequestMovieList {
@@ -108,4 +109,39 @@ export interface spoken_languages {
   english_name: string;
   iso_639_1: string;
   name: string;
+}
+
+export interface resultCastMenberMovie {
+  cast: CastMemberMovie[];
+  crew: crewCastMovie[];
+  id: number;
+}
+
+export interface CastMemberMovie {
+  adult: boolean;
+  cast_id: number;
+  character: string;
+  credit_id: string;
+  gender: number;
+  id: number;
+  known_for_department: string;
+  name: string;
+  order: number;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
+}
+
+export interface crewCastMovie {
+  adult: boolean;
+  credit_id: string;
+  department: string;
+  gender: number;
+  id: number;
+  job: number;
+  known_for_department: string;
+  name: string;
+  original_name: string;
+  popularity: number;
+  profile_path: string;
 }

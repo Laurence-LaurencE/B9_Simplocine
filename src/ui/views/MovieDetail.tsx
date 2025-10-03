@@ -1,11 +1,14 @@
 import { ContenTypeEnum, type Moviedetail } from "../../core/type";
 import { useMovieDetail } from "../../core/fetchDetail";
+import { useMovieCast } from "../../core/fetchcast";
+import { Carousel } from "../carousel/Carousel";
 import { useParams } from "react-router-dom";
 import "./styleViews/MovieDetail.css";
 
 function MovieDetail() {
   const { id } = useParams<{ id: string }>();
   const film = useMovieDetail<Moviedetail>(id, ContenTypeEnum.MOVIE);
+  const cast = useMovieCast(id!);
 
   return (
     <div className="detail-page">
@@ -19,6 +22,11 @@ function MovieDetail() {
         <p>Note moyenne : {film?.vote_average}</p>
         <p>{film?.overview}</p>
       </div>
+
+      <h3>Personnages</h3>
+      {cast.length > 0 && (
+        <Carousel content={cast} contentType={ContenTypeEnum.CAST} />
+      )}
     </div>
   );
 }

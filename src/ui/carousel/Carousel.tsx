@@ -1,9 +1,14 @@
-import type { ResultMovie, ResultSeries } from "../../core/type";
+import type {
+  CastMemberMovie,
+  ResultMovie,
+  ResultSeries,
+} from "../../core/type";
 import { CardSerie } from "../card-serie/CardSerie";
 import { ContenTypeEnum } from "../../core/type";
 import { CardMovie } from "../card/CardMovie";
 import { useRef } from "react";
 import "./Carousel.css";
+import { CardCastMovie } from "../card-Cast/CardCastMovie";
 
 type CarouselProps =
   | {
@@ -13,6 +18,10 @@ type CarouselProps =
   | {
       content: ResultSeries[];
       contentType: ContenTypeEnum.SERIE;
+    }
+  | {
+      content: CastMemberMovie[];
+      contentType: ContenTypeEnum.CAST;
     };
 
 export const Carousel = ({ content, contentType }: CarouselProps) => {
@@ -46,6 +55,13 @@ export const Carousel = ({ content, contentType }: CarouselProps) => {
           (content as ResultSeries[]).map((item) => (
             <li key={item.id}>
               <CardSerie content={item} />
+            </li>
+          ))}
+
+        {contentType === ContenTypeEnum.CAST &&
+          (content as CastMemberMovie[]).map((item) => (
+            <li key={item.id}>
+              <CardCastMovie content={item} />
             </li>
           ))}
       </ul>

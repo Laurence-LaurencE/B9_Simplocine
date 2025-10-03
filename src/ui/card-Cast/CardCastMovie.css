@@ -1,0 +1,43 @@
+.card-cast {
+  width: 200px; /* même largeur que tes films */
+  border-radius: 10px;
+  background: linear-gradient(180deg, var(--card), rgba(18,20,24,0.85));
+  color: #fff;
+  text-align:center;
+  padding: .6rem;
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card-cast img {
+  width: 100%;
+  height: 270px; /* même hauteur que films */
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: .5rem;
+}
+
+.card-cast p {
+  font-size: 0.95rem;
+  margin: 0.35rem 0 0;
+}
+
+.card-cast .character {
+  font-size: 0.85rem;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* Hover / focus */
+.card-cast:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2,6,23,0.75);
+}
+
+/* small screens */
+@media (max-width:480px){
+  .card-cast { width: 150px; padding: .5rem; }
+  .card-cast img { height: 220px; }
+}
