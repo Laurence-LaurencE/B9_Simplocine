@@ -9,7 +9,7 @@ import clsx from "clsx";
 export const CardSeries = ({serie}: CardSerieProps) => {
     return (
         <>
-        <Link to={`/DetailsSeries/${serie.id}`}>
+        <Link to={`/DetailsSerie/${serie.id}`}>
         <img className="CardImg" 
         src={`https://image.tmdb.org/t/p/w300${serie.poster_path}`} 
         alt="poster de la série" />
