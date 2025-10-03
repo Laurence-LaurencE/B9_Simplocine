@@ -1,8 +1,7 @@
-import { useMovieConnection } from "../core/fetch";
-import { ContenTypeEnum, type RequestMovieList } from "../core/type";
-import { Banner } from "../ui/banner/Banner";
-import { Carousel } from "../ui/carousel/Carousel";
-import { Header } from "../ui/Header/Header";
+import { ContenTypeEnum, type RequestMovieList } from "../../core/type";
+import { Carousel } from "../carousel/Carousel";
+import { useMovieConnection } from "../../core/fetch";
+import { Banner } from "../banner/Banner";
 
 function ListMovie() {
   const randomPage = Math.floor(Math.random() * 200) + 1;
@@ -27,15 +26,8 @@ function ListMovie() {
     `https://api.themoviedb.org/3/discover/movie?with_genres=18&page=${randomPage}`
   );
 
-  const films = useMovieConnection<RequestMovieList>(
-    `https://api.themoviedb.org/3/genre/movie/list`
-  );
-
-  console.log(films);
-
   return (
     <>
-      <Header />
       <Banner />
       <h3>Action</h3>
       {filmsAction && (

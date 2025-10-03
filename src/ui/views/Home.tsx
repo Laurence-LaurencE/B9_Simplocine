@@ -1,8 +1,7 @@
-import { ContenTypeEnum, type RequestMovieList } from "../core/type";
-import { useMovieConnection } from "../core/fetch";
-import { Carousel } from "../ui/carousel/Carousel";
-import { Banner } from "../ui/banner/Banner";
-import { Header } from "../ui/Header/Header";
+import { ContenTypeEnum, type RequestMovieList } from "../../core/type";
+import { useMovieConnection } from "../../core/fetch";
+import { Carousel } from "../carousel/Carousel";
+import { Banner } from "../banner/Banner";
 
 function Home() {
   const randomPage = Math.floor(Math.random() * 50) + 1;
@@ -21,7 +20,6 @@ function Home() {
 
   return (
     <>
-      <Header />
       <Banner />
       <h3>Films les plus populaires</h3>
       {filmsPopular && (

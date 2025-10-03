@@ -1,12 +1,7 @@
-import { useMovieConnection } from "../core/fetch";
-import {
-  ContenTypeEnum,
-  type RequestMovieList,
-  type ResultSeriesList,
-} from "../core/type";
-import { Banner } from "../ui/banner/Banner";
-import { Carousel } from "../ui/carousel/Carousel";
-import { Header } from "../ui/Header/Header";
+import { ContenTypeEnum, type ResultSeriesList } from "../../core/type";
+import { useMovieConnection } from "../../core/fetch";
+import { Carousel } from "../carousel/Carousel";
+import { Banner } from "../banner/Banner";
 
 function ListSeries() {
   const randomPage = Math.floor(Math.random() * 200) + 1;
@@ -19,8 +14,8 @@ function ListSeries() {
     `https://api.themoviedb.org/3/discover/tv?with_genres=35&page=${randomPage}`
   );
 
-  const seriesHorror = useMovieConnection<ResultSeriesList>(
-    `https://api.themoviedb.org/3/discover/tv?with_genres=27&page=${randomPage}`
+  const seriesAnimation = useMovieConnection<ResultSeriesList>(
+    `https://api.themoviedb.org/3/discover/tv?with_genres=16&page=${randomPage}`
   );
 
   const seriesFiction = useMovieConnection<ResultSeriesList>(
@@ -31,16 +26,8 @@ function ListSeries() {
     `https://api.themoviedb.org/3/discover/tv?with_genres=18&page=${randomPage}`
   );
 
-  const series = useMovieConnection<ResultSeriesList>(
-    `https://api.themoviedb.org/3/genre/tv/list`
-  );
-
-  // console.log(series);
-  console.log(seriesAction);
-
   return (
     <>
-      <Header />
       <Banner />
       <h3>Action</h3>
       {seriesAction && (
@@ -56,10 +43,10 @@ function ListSeries() {
           contentType={ContenTypeEnum.SERIE}
         />
       )}
-      <h3>Horreur</h3>
-      {seriesHorror && (
+      <h3>Animation</h3>
+      {seriesAnimation && (
         <Carousel
-          content={seriesHorror.results}
+          content={seriesAnimation.results}
           contentType={ContenTypeEnum.SERIE}
         />
       )}

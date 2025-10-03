@@ -1,0 +1,15 @@
+/* Layout defaults for pages */
+main {
+  padding: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+section + section { margin-top: 2rem; }
+
+h3 {
+  margin: 1.2rem 0 .6rem 0;
+  font-size: 1.25rem;
+  color: #f1f5f9;
+  padding-left: .4rem;
+  border-left: 4px solid rgba(255,255,255,0.04);
+}

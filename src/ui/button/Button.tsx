@@ -7,5 +7,5 @@ interface ButtonProps {
 }
 
 export const Button = ({label}: ButtonProps) => {
-  return <button>{label}</button>;
+  return <button className="button">{label}</button>;
 };
