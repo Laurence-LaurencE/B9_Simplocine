@@ -1,7 +1,7 @@
 import { CardMovies } from "../card/CardMovies";
 import type { CarouselMovieProps} from "../type/type";
 import "./Carousel.css";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 
 export const Carousel = ({Films}: CarouselMovieProps) => {

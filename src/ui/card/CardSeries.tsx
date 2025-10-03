@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { CardSerieProps } from "../type/type";
 import "./Card.css";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 
 //normalment la props doit se trouver ici.
