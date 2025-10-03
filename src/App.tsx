@@ -14,10 +14,13 @@ export const App = () => {
         <Route path="/" element={<Home />} />
 
         <Route path="/MoviesList" element={<MoviesList />} />
+      {/* ___Movies___ */}
         <Route path="/DetailsMovies/:id" element={<DetailsMovie />}/>
 
+      {/* ___Series___ */}
         <Route path="/SeriesList" element={<SeriesList />} />
         <Route path="/DetailsSerie/:id" element={<DetailsSerie />}/>
+
 
       </Routes>
     </BrowserRouter>

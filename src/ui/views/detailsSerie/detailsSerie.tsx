@@ -1,6 +1,6 @@
 import { useFetchDetailsS } from "../../Fetch/FetchDetailsSeries";
-// import type { detailsMovies } from "../../type/type";
-// aremplacer par detailsSeries
+import type { detailsSeries } from "../../type/type";
+// a remplacer par detailsSeries
 import { Header } from "../../Header/Header";
 import { useParams } from "react-router";
 import "./DetailsSerie.css";
@@ -9,26 +9,31 @@ import "./DetailsSerie.css";
 export const DetailsSerie = () => {
   const { id } = useParams<{ id: string }>();
 
-  const FetcherDetailsSeries = useFetchDetailsS(id);
+  const FetcherDetailsSeries: detailsSeries | undefined = useFetchDetailsS<detailsSeries>(id);
+
 console.log(FetcherDetailsSeries);
 
   
   return (
     <>
       <Header />
-      <h2>Title : </h2> 
-
-      {/* <h2>Title : {FetcherDetailsMovies?.title}</h2>
+      
+      <h2>Title : {FetcherDetailsSeries?.name}</h2>
       <img
-        src={`https://image.tmdb.org/t/p/w300${FetcherDetailsMovies?.poster_path}`}
-        alt={FetcherDetailsMovies?.title}
+        src={`https://image.tmdb.org/t/p/w300${FetcherDetailsSeries?.poster_path}`}
+        alt={FetcherDetailsSeries?.name}
       />
-      <p>Date de sortie : {FetcherDetailsMovies?.release_date}</p>
-      <p>Note moyenne : {FetcherDetailsMovies?.vote_average}</p>
-      <p>Description : {FetcherDetailsMovies?.overview}</p>
+      {FetcherDetailsSeries && (
+        <p>Saison : {FetcherDetailsSeries.seasons.map((season) => {
+          return <span>{season.name}</span> 
+        })}</p>
+      )}
+      
+      <p>Note moyenne : {FetcherDetailsSeries?.vote_average}</p>
+      <p>Description : {FetcherDetailsSeries?.overview}</p>
 
-      <h3>casting du film avec photo membres pricipaux</h3>
-      <h3>carousel films recommandés</h3> */}
+      <h3>casting de la série avec photo membres pricipaux</h3>
+      <h3>carousel séries recommandées</h3>
     </>
   );
 };

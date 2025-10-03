@@ -12,7 +12,6 @@ export const DetailsMovie = () => {
   return (
     <>
       <Header />
-
       <h2>Title : {FetcherDetailsMovies?.title}</h2>
       <img
         src={`https://image.tmdb.org/t/p/w300${FetcherDetailsMovies?.poster_path}`}
