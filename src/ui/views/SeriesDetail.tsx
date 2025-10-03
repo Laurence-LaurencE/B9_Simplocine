@@ -1,7 +1,7 @@
 import { ContenTypeEnum, type ResultSeries } from "../../core/type";
 import { useMovieDetail } from "../../core/fetchDetail";
 import { useParams } from "react-router-dom";
-import "./styleViews/MovieDetail.css"
+
 
 function SeriesDetail() {
   const { id } = useParams<{ id: string }>();

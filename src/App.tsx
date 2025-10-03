@@ -4,7 +4,6 @@ import MovieDetail from "./ui/views/MovieDetail";
 import ListSeries from "./ui/views/ListSeries";
 import ListMovie from "./ui/views/ListMovie";
 import Home from "./ui/views/Home";
-import "./App.css";
 
 export const App = () => {
   return (

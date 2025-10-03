@@ -2,7 +2,6 @@ import { ContenTypeEnum, type RequestMovieList } from "../../core/type";
 import { useMovieConnection } from "../../core/fetch";
 import { Carousel } from "../carousel/Carousel";
 import { Banner } from "../banner/Banner";
-import { useMovieCast } from "../../core/fetchcast";
 
 function Home() {
   const randomPage = Math.floor(Math.random() * 50) + 1;

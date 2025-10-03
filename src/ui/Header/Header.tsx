@@ -1,7 +1,7 @@
 import Logo_SimploCine from "/Logo_SimploCine.jpg"
 import { Button } from "../button/Button";
 import { Link } from "react-router-dom";
-import "./Header.css";
+
 
 
 export const Header = () => {
