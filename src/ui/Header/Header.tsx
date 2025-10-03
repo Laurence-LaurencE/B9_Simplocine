@@ -1,13 +1,14 @@
 import "./Header.css";
 import clsx from "clsx";
 import { Button } from "../button/Button";
+import Logo_SimploCine from "/pict/Logo_SimploCine.jpg";
 
 //interface ? 
 
 export const Header = () => {
   return (
     <div className="header">
-      <img src="./pict/Logo_SimploCine.jpg" alt="logo" />
+      <img src={Logo_SimploCine} alt="logo" />
       <h1>Simplo Ciné</h1>
       <nav>
         <ul>
@@ -25,3 +26,4 @@ export const Header = () => {
     </div>
   );
 };
+

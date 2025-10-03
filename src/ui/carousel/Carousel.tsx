@@ -1,11 +1,10 @@
+import { CardMovies } from "../card/CardMovies";
+import type { CarouselMovieProps} from "../type/type";
 import "./Carousel.css";
 import clsx from "clsx";
-import { Card } from "../card/Card";
-import type { CarouselProps } from "../type/type";
 
 
-
-export const Carousel = ({Films}: CarouselProps) => {
+export const Carousel = ({Films}: CarouselMovieProps) => {
 
     // return <>
     // <ul className="carousel">
@@ -24,7 +23,7 @@ export const Carousel = ({Films}: CarouselProps) => {
             {
                 Films.map((film) => (
                     <li key={film.id}>
-                        <Card film={film}/>
+                        <CardMovies film={film}/>
                     </li>
                 )
                 )

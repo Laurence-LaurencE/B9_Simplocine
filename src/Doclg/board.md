@@ -101,3 +101,61 @@ setFilms(datas);
 ROUTES :
 prévoir les routes pour chaque views ds App.tsx
  - 
+
+
+### =======================================================
+{genres: Array(16)}
+genres
+: 
+Array(16)
+0
+: 
+{id: 10759, name: 'Action & Adventure'}
+1
+: 
+{id: 16, name: 'Animation'}
+2
+: 
+{id: 35, name: 'Comedy'}
+3
+: 
+{id: 80, name: 'Crime'}
+4
+: 
+{id: 99, name: 'Documentary'}
+5
+: 
+{id: 18, name: 'Drama'}
+6
+: 
+{id: 10751, name: 'Family'}
+7
+: 
+{id: 10762, name: 'Kids'}
+8
+: 
+{id: 9648, name: 'Mystery'}
+9
+: 
+{id: 10763, name: 'News'}
+10
+: 
+{id: 10764, name: 'Reality'}
+11
+: 
+{id: 10765, name: 'Sci-Fi & Fantasy'}
+12
+: 
+{id: 10766, name: 'Soap'}
+13
+: 
+{id: 10767, name: 'Talk'}
+14
+: 
+{id: 10768, name: 'War & Politics'}
+15
+: 
+{id: 37, name: 'Western'}
+length
+: 
+16
