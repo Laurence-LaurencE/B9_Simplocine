@@ -1,6 +1,6 @@
 //fichier pour typer les réponses que je reçois
 
-import { Carousel } from "../carousel/Carousel";
+// import { Carousel } from "../carousel/Carousel";
 
 //typage de la respons de ce q je recup de l'API :
 export interface responsTypeM {
