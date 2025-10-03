@@ -1,9 +1,9 @@
 import { Link } from "react-router";
-import type { CardProps } from "../type/type";
+import type { CardMovieProps } from "../type/type";
 import "./Card.css";
 import clsx from "clsx";
 
-export const Card = ({film}: CardProps) => {
+export const CardMovies = ({film}: CardMovieProps) => {
   return (
     <>
     <Link to={`/DetailsMovies/${film.id}`}>

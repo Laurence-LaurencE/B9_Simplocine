@@ -4,7 +4,7 @@
  > Home.tsx
  > Home.css
 
- => Baner => img + title + url movie 
+ => Banner => img + title + url movie 
  => change à chaque rechargement de page
 
 
@@ -18,11 +18,15 @@
 ## seriesList
  > SeriesList.tsx
  > SeriesList.css
-
+_
 ## detailsMovie
  > DetailsMovie.tsx
  > DetailsMovie.css
 
+ ## detailsSerie
+ > DetailsSerie.tsx
+ > DetailsSerie.css
+_
 ## detailsMember
  > DetailsMember.tsx
  > DetailsMember.css
@@ -41,27 +45,48 @@
 # carousel
  > Carousel.tsx
  > Carousel.css
- 
+ _
  # card
- > Card.tsx
- > Card.css
+ > CardMovies.tsx
+ > CardMovies.css
+ _
+ > CardSeries.tsx
+ > CardSeries.css
+
  => contriendra img +  titre + description
+_
+# fetchAPI x
+# fetchDetailsMovies x
+# fetchDetailsSeries x
 
 
 
-
- 
 ### =======================================================
+
+### App.tsx 
+> Routes
+  > Route Home
+
+  > Route MoviesList
+  > Route DetailsMovie
+
+  > Route SeriesList
+  > Route DetailsSerie
+
+
+
 ### =======================================================
 
 1/ home
   => creation de la page
    => connecxion API => verification fonctionne
 
-
+2/fetchMovies => poru pouvoir recup les données
 2/ moviesList
 3/ detailsMovie
 
 ./ Button 
+
+####
 
 
