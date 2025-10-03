@@ -1,69 +1,50 @@
-# React + TypeScript + Vite
+Projet de cours : SimploCine 
+### ### ### ### ### ### ### ### ### ### ### ### ### ### 
+Les spécifications du projet sont détaillées dans un cahier des charges ci-dessous.
+Objectif :
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+=> concevoir un MVP (Minimum Viable Product) inspiré de la plateforme américaine Netflix, en utilisant la bibliothèque React.
 
-Currently, two official plugins are available:
+- Réaliser un projet React reproduisant la plateforme Netflix (sans les vidéos)
+- Réaliser une intégration frontend mobile first et responsive
+- Exploiter les fonctionnalités de React pour tirer le meilleur du framework les standards définis dans la documentation officielle
+- Assurer l’intégrité des données dans le programme avec un typage fort (TypeScript)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Les données sont accessibles via l’API de Simplo’ciné : 🔗 documentation officielle
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Cahier des charges :
+Liste exhaustive des fonctionnalités attendues :
+🏡 Page d’accueil
+La page d’accueil affiche une bannière sobre présentant un film populaire à l’affiche et contenant le titre du
+film et un lien vers le film. Le film est différent à chaque rechargement de page.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Trois carrousels dynamiques : un pour les films les plus populaires, un pour les films les mieux notés et un
+dernier pour les sorties à venir
+🗒 Page de liste des films
+La page de liste des films propose 5 carrousels dynamiques. Chaque carrousel affiche des films d’un même
+genre (choix libre)
+Chaque élément du carrousel est cliquable et redirige l’utilisateur vers la page de détail du contenu
+🗒 Page de liste des séries
+La page de liste des séries propose 5 carrousels dynamiques. Chaque carrousel affiche des séries d’un
+même genre (choix libre)
+Chaque élément du carrousel est cliquable et redirige l’utilisateur vers la page de détail du contenu
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🔍 Page de détail d’un film ou d’une série
+La page de détail d’un contenu présente l’ensemble des informations disponibles. Vous devez utilisez toutes
+les données à votre disposition, ne vous contentez pas du minimum, le produit final doit être convaincant et
+professionnel
+La page de détail contient le casting du film avec la photo des membres principaux
+La page de détail contient un carousel des films recommandés / complémentaires
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🔍 Page de détail d’un(e) membre du casting
+La page de détail d’un(e) acteur/actrice présente l’ensemble des informations de la personne
+La page de détail contient un carousel de la filmographie de la personne
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+### Livrables
+- Un rendu Simplon avec : lien vers le dépôt Github du projet + instance en ligne (de préférence : [railway](https://railway.com/))
+- Une dépôt Github en ordre, avec un README et un historique de versionnement régulier et pertinent.
+
