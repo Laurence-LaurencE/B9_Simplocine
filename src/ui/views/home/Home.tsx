@@ -5,7 +5,7 @@ import type { responsTypeM } from "../../type/type";
 import { Header } from "../../Header/Header";
 import { Banner } from "../../banner/Banner";
 import { Carousel } from "../../carousel/Carousel";
-import { useFetchDetailsS } from "../../Fetch/FetchDetailsSeries";
+// import { useFetchDetailsS } from "../../Fetch/FetchDetailsSeries";
 
 
 export const Home = () => {

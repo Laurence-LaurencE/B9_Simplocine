@@ -1,5 +1,5 @@
 import "./Button.css";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 interface ButtonProps {
     label: string;

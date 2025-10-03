@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import type { responsTypeM } from "../type/type";
+// import type { responsTypeM } from "../type/type";
 
 
 export const useFetch = <T extends unknown> (urlAPI:string): T | undefined => {
