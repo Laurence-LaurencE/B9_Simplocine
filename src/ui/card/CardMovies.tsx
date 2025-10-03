@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { CardMovieProps } from "../type/type";
 import "./Card.css";
-import clsx from "clsx";
+// import clsx from "clsx";
 
 export const CardMovies = ({film}: CardMovieProps) => {
   return (
